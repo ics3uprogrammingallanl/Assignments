@@ -1,0 +1,9 @@
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\obj\Debug\FallingObjectsAllanL.csprojResolveAssemblyReference.cache
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\obj\Debug\FallingObjectsAllanL.frmFallingObjects.resources
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\obj\Debug\FallingObjectsAllanL.Properties.Resources.resources
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\obj\Debug\FallingObjectsAllanL.csproj.GenerateResource.Cache
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\bin\Debug\FallingObjectsAllanL.exe.config
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\bin\Debug\FallingObjectsAllanL.exe
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\bin\Debug\FallingObjectsAllanL.pdb
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\obj\Debug\FallingObjectsAllanL.exe
+N:\StuShare\Semester 2 - Winter 2019\ICS3U Programming\Leveille, Allan (s436282)\Assignments\FallingObjectsAllanL\FallingObjectsAllanL\obj\Debug\FallingObjectsAllanL.pdb
