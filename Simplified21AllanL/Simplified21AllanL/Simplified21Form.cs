@@ -489,29 +489,29 @@ namespace Simplified21AllanL
             }
             else if (DealNum1 == 7)
             {
-                this.picDealCard.Image = Properties.Resources._7S;
+                this.picDealCard1.Image = Properties.Resources._7S;
             }
             else if (DealNum1 == 8)
             {
-                this.picComp1.Image = Properties.Resources._8S;
+                this.picDealCard1.Image = Properties.Resources._8S;
             }
             else if (DealNum1 == 9)
             {
-                this.picComp1.Image = Properties.Resources._9S;
+                this.picDealCard1.Image = Properties.Resources._9S;
             }
             else if (DealNum1 == 10)
             {
-                this.picComp1.Image = Properties.Resources._10S;
+                this.picDealCard1.Image = Properties.Resources._10S;
             }
 
             //comp card pics 2
             if (compNum2 == 1)
             {
-                this.picComp2.Image = Properties.Resources.AS;
+                this.picDealCard2.Image = Properties.Resources.AS;
             }
             else if (compNum2 == 2)
             {
-                this.picComp2.Image = Properties.Resources._2S;
+                this.picDealCard2.Image = Properties.Resources._2S;
             }
             else if (compNum2 == 3)
             {
