@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Created by: Allan L
+ * Created on: April 4, 2019
+ * Created for: ICS3U Programming
+ * Assignment 5b - Simple 21
+ * This program is a simplified version of Blackjack the card game.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,15 +22,15 @@ namespace Simplified21AllanL
     {
         //Global variables
         const int MAX_NUM = 10;
-        const int MIN_NUM = 1;
+        const int MIN_NUM = 2;
         int userNum1;
         int userNum2;
         int userNum3;
-        int DealNum1;
-        int DealNum2;
-        int DealNum3;
+        int dealNum1;
+        int dealNum2;
+        int dealNum3;
         int userTotal;
-        int DealTotal;
+        int dealTotal;
         int winCounter;
 
         //random number generator
@@ -32,111 +40,159 @@ namespace Simplified21AllanL
         {
             InitializeComponent();
 
+            UserCards();
+
             //hiding picture boxes
             picUserCard3.Hide();
+
+        }
+
+        private void UserCards ()
+        {
 
             //Generate random numbers
             userNum1 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
             userNum2 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
-            DealNum1 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
-            DealNum2 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
-            DealNum3 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum1 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum2 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum3 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
 
-            //userNum1 images
-            if (userNum1 == 1)
+            //user images 1
+            if (userNum1 == 2)
             {
-                this.picUserCard1.Image = Properties.Resources._1S;
+
+                this.picUserCard1.Image = Properties.Resources._0;
+
             }
             else if (userNum1 == 2)
             {
-                this.picUserCard1.Image = Properties.Resources._2s;
+
+                this.picUserCard1.Image = Properties.Resources._1;
+
             }
             else if (userNum1 == 3)
             {
-                this.picUserCard1.Image = Properties.Resources._3S;
+
+                this.picUserCard1.Image = Properties.Resources._5;
+
             }
             else if (userNum1 == 4)
             {
-                this.picUserCard1.Image = Properties.Resources._4S;
-            }
-            else if (userNum1 == 5)
-            {
-                this.picUserCard1.Image = Properties.Resources._5S;
-            }
-            else if (userNum1 == 6)
-            {
-                this.picUserCard1.Image = Properties.Resources._6S;
+
+                this.picUserCard1.Image = Properties.Resources._11;
+
             }
             else if (userNum1 == 7)
             {
-                this.picUserCard1.Image = Properties.Resources._7S;
+
+                this.picUserCard1.Image = Properties.Resources._20;
+
             }
-            else if (userNum1 == 8)
+            else if (userNum1 == 5)
             {
-                this.picUserCard1.Image = Properties.Resources._8S;
+
+                this.picUserCard1.Image = Properties.Resources._13;
+
             }
             else if (userNum1 == 9)
             {
-                this.picUserCard1.Image = Properties.Resources._9S;
+
+                this.picUserCard1.Image = Properties.Resources._28;
+
             }
             else if (userNum1 == 10)
             {
-                this.picUserCard1.Image = Properties.Resources._10S;
+
+                this.picUserCard1.Image = Properties.Resources._46;
+
+            }
+            else if (userNum1 == 6)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._17;
+
+            }
+            else if (userNum1 == 8)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._25;
+
             }
 
-            //userNum2 images
-            if (userNum2 == 1)
+            //user image 2
+            if (userNum2 == 2)
             {
-                this.picUserCard2.Image = Properties.Resources.AS;
-            }
-            else if (userNum2 == 2)
-            {
-                this.picUserCard2.Image = Properties.Resources._2S;
+
+                this.picUserCard2.Image = Properties.Resources._2;
+
             }
             else if (userNum2 == 3)
             {
-                this.picUserCard2.Image = Properties.Resources._3S;
+
+                this.picUserCard2.Image = Properties.Resources._6;
+
             }
             else if (userNum2 == 4)
             {
-                this.picUserCard2.Image = Properties.Resources._4S;
+
+                this.picUserCard2.Image = Properties.Resources._11;
+
             }
             else if (userNum2 == 5)
             {
-                this.picUserCard2.Image = Properties.Resources._5S;
+
+                this.picUserCard2.Image = Properties.Resources._15;
+
             }
             else if (userNum2 == 6)
             {
-                this.picUserCard2.Image = Properties.Resources._6S;
+
+                this.picUserCard2.Image = Properties.Resources._19;
+
             }
             else if (userNum2 == 7)
             {
-                this.picUserCard2.Image = Properties.Resources._7S;
+
+                this.picUserCard2.Image = Properties.Resources._23;
+
             }
             else if (userNum2 == 8)
             {
-                this.picUserCard2.Image = Properties.Resources._8S;
+
+                this.picUserCard2.Image = Properties.Resources._27;
+
             }
             else if (userNum2 == 9)
             {
-                this.picUserCard2.Image = Properties.Resources._9S;
+
+                this.picUserCard2.Image = Properties.Resources._30;
+
             }
             else if (userNum2 == 10)
             {
-                this.picUserCard2.Image = Properties.Resources._10S;
+
+                this.picUserCard2.Image = Properties.Resources._46;
+
+            }
+            else if (userNum2 == 4)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._10;
+
             }
 
             //show the total
             lblUserTotal.Text = Convert.ToString(userNum1 + userNum2);
 
-            //show the front of the cards
-            this.picDealCard1.Image = Properties.Resources.Front;
-            this.picDealCard2.Image = Properties.Resources.Front;
-            this.picDealCard3.Image = Properties.Resources.Front;
+            //show the Back of the cards
+            this.picDealCard1.Image = Properties.Resources.CardBack;
+            this.picDealCard2.Image = Properties.Resources.CardBack;
+            this.picDealCard3.Image = Properties.Resources.CardBack;
 
             //disable play again
             btnPlayAgain.Enabled = false;
         }
+
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
@@ -152,17 +208,17 @@ namespace Simplified21AllanL
 
         }
 
-        private void picDealCard1_Click(object sender, EventArgs e)
+        private void picdealCard1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void picDealCard2_Click(object sender, EventArgs e)
+        private void picdealCard2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void picDealCard3_Click(object sender, EventArgs e)
+        private void picdealCard3_Click(object sender, EventArgs e)
         {
 
         }
@@ -179,60 +235,80 @@ namespace Simplified21AllanL
 
         private void btnHit_Click(object sender, EventArgs e)
         {
-            //Generate a new random number and set it to userNum3
             userNum3 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
 
             //check to see who wins
             userTotal = userNum1 + userNum2 + userNum3;
-            DealTotal = DealNum1 + DealNum2 + DealNum3;
+            dealTotal = dealNum1 + dealNum2 + dealNum3;
 
-            //show the picbox
             picUserCard3.Show();
 
             //userNum3 pictures
-            if (userNum3 == 1)
+            if (userNum3 == 5)
             {
-                this.picUserCard3.Image = Properties.Resources.AS;
+
+                this.picUserCard3.Image = Properties.Resources._14;
+
             }
             else if (userNum3 == 2)
             {
-                this.picUserCard3.Image = Properties.Resources._2S;
-            }
-            else if (userNum3 == 3)
-            {
-                this.picUserCard3.Image = Properties.Resources._3S;
+
+                this.picUserCard3.Image = Properties.Resources._3;
+
             }
             else if (userNum3 == 4)
             {
-                this.picUserCard3.Image = Properties.Resources._4S;
-            }
-            else if (userNum3 == 5)
-            {
-                this.picUserCard3.Image = Properties.Resources._5S;
-            }
-            else if (userNum3 == 6)
-            {
-                this.picUserCard3.Image = Properties.Resources._6S;
-            }
-            else if (userNum3 == 7)
-            {
-                this.picUserCard3.Image = Properties.Resources._7S;
-            }
-            else if (userNum3 == 8)
-            {
-                this.picUserCard3.Image = Properties.Resources._8S;
-            }
-            else if (userNum3 == 9)
-            {
-                this.picUserCard3.Image = Properties.Resources._9S;
+
+                this.picUserCard3.Image = Properties.Resources._9;
+
             }
             else if (userNum3 == 10)
             {
-                this.picUserCard3.Image = Properties.Resources._10S;
+
+                this.picUserCard3.Image = Properties.Resources._47;
+
+            }
+            else if (userNum3 == 9)
+            {
+
+                this.picUserCard3.Image = Properties.Resources._31;
+
+            }
+            else if (userNum3 == 3)
+            {
+
+                this.picUserCard3.Image = Properties.Resources._5;
+
+            }
+            else if (userNum3 == 8)
+            {
+
+                this.picUserCard3.Image = Properties.Resources._26;
+
+            }
+            else if (userNum3 == 6)
+            {
+
+                this.picUserCard3.Image = Properties.Resources._17;
+
+            }
+            else if (userNum3 == 9)
+            {
+
+                this.picUserCard3.Image = Properties.Resources._29;
+
+            }
+            else if (userNum3 == 7)
+            {
+
+                this.picUserCard3.Image = Properties.Resources._22;
+
             }
 
-            //Check to see who won or lost
-            if (userTotal == DealTotal)
+            this.Refresh();
+
+            //Check to see who won
+            if (userTotal == dealTotal)
             {
                 this.lblWinner.Text = "Draw";
             }
@@ -241,15 +317,15 @@ namespace Simplified21AllanL
                 this.lblWinner.Text = "Blackjack! You Win";
                 winCounter++;
             }
-            else if (DealTotal == 21)
+            else if (dealTotal == 21)
             {
-                this.lblWinner.Text = "Blackjack! Dealer Wins";
+                this.lblWinner.Text = "Blackjack! dealer Wins";
             }
             else if (userTotal > 21)
             {
                 this.lblWinner.Text = "Dealer Wins";
             }
-            else if (DealTotal > 21)
+            else if (dealTotal > 21)
             {
                 if (userTotal < 21)
                 {
@@ -261,145 +337,215 @@ namespace Simplified21AllanL
                     this.lblWinner.Text = "Dealer Wins";
                 }
             }
-            else if (userTotal > DealTotal)
+            else if (userTotal > dealTotal)
             {
                 this.lblWinner.Text = "You Win";
                 winCounter++;
             }
-            else if (userTotal < DealTotal)
+            else if (userTotal < dealTotal)
             {
                 this.lblWinner.Text = "Dealer Wins";
             }
 
+            this.Refresh();
+
             //show the totals
             lblUserTotal.Text = Convert.ToString(userTotal);
-            lblDealTotal.Text = Convert.ToString(DealTotal);
+            lblDealTotal.Text = Convert.ToString(dealTotal);
 
-            //comp card pics 1
-            if (DealNum1 == 1)
+            //dealer card 1 pics
+            if (dealNum1 == 5)
             {
-                this.picDealCard1.Image = Properties.Resources.AS;
-            }
-            else if (DealNum1 == 2)
-            {
-                this.picDealCard1.Image = Properties.Resources._2S;
-            }
-            else if (DealNum1 == 3)
-            {
-                this.picDealCard1.Image = Properties.Resources._3S;
-            }
-            else if (DealNum1 == 4)
-            {
-                this.picDealCard1.Image = Properties.Resources._4S;
-            }
-            else if (DealNum1 == 5)
-            {
-                this.picDealCard1.Image = Properties.Resources._5S;
-            }
-            else if (DealNum1 == 6)
-            {
-                this.picDealCard1.Image = Properties.Resources._6S;
-            }
-            else if (DealNum1 == 7)
-            {
-                this.picDealCard1.Image = Properties.Resources._7S;
-            }
-            else if (DealNum1 == 8)
-            {
-                this.picDealCard1.Image = Properties.Resources._8S;
-            }
-            else if (DealNum1 == 9)
-            {
-                this.picDealCard1.Image = Properties.Resources._9S;
-            }
-            else if (DealNum1 == 10)
-            {
-                this.picDealCard1.Image = Properties.Resources._10S;
-            }
 
-            //comp card pics 2
-            if (DealNum2 == 1)
-            {
-                this.picDealCard2.Image = Properties.Resources.AS;
+                this.picDealCard1.Image = Properties.Resources._13;
+
             }
-            else if (DealNum2 == 2)
+            else if (dealNum1 == 2)
             {
-                this.picDealCard2.Image = Properties.Resources._2S;
+
+                this.picDealCard1.Image = Properties.Resources._3;
+
             }
-            else if (DealNum2 == 3)
+            else if (dealNum1 == 3)
             {
-                this.picDealCard2.Image = Properties.Resources._3S;
+
+                this.picDealCard1.Image = Properties.Resources._7;
+
             }
-            else if (DealNum2 == 4)
+            else if (dealNum1 == 4)
             {
-                this.picDealCard2.Image = Properties.Resources._4S;
+
+                this.picDealCard1.Image = Properties.Resources._10;
+
             }
-            else if (DealNum2 == 5)
+            else if (dealNum1 == 5)
             {
-                this.picDealCard2.Image = Properties.Resources._5S;
+
+                this.picDealCard1.Image = Properties.Resources._14;
+
             }
-            else if (DealNum2 == 6)
+            else if (dealNum1 == 6)
             {
-                this.picDealCard2.Image = Properties.Resources._6S;
+
+                this.picDealCard1.Image = Properties.Resources._18;
+
             }
-            else if (DealNum2 == 7)
+            else if (dealNum1 == 7)
             {
-                this.picDealCard2.Image = Properties.Resources._7S;
+
+                this.picDealCard1.Image = Properties.Resources._22;
+
             }
-            else if (DealNum2 == 8)
+            else if (dealNum1 == 8)
             {
-                this.picDealCard2.Image = Properties.Resources._8S;
+
+                this.picDealCard1.Image = Properties.Resources._25;
+
             }
-            else if (DealNum2 == 9)
+            else if (dealNum1 == 9)
             {
-                this.picDealCard2.Image = Properties.Resources._9S;
+
+                this.picDealCard1.Image = Properties.Resources._30;
+
             }
-            else if (DealNum2 == 10)
+            else if (dealNum1 == 10)
             {
-                this.picDealCard2.Image = Properties.Resources._10S;
+
+                this.picDealCard1.Image = Properties.Resources._47;
+
             }
 
-            //comp card pics 3
-            if (DealNum3 == 1)
+            this.Refresh();
+
+            //dealer card 2 pics 
+            if (dealNum2 == 7)
             {
-                this.picDealCard3.Image = Properties.Resources.AS;
+
+                this.picDealCard2.Image = Properties.Resources._23;
+
             }
-            else if (DealNum3 == 2)
+            else if (dealNum2 == 2)
             {
-                this.picDealCard3.Image = Properties.Resources._2S;
+
+                this.picDealCard2.Image = Properties.Resources._2;
+
             }
-            else if (DealNum3 == 3)
+            else if (dealNum2 == 3)
             {
-                this.picDealCard3.Image = Properties.Resources._3S;
+
+
+                this.picDealCard2.Image = Properties.Resources._7;
+
             }
-            else if (DealNum3 == 4)
+            else if (dealNum2 == 4)
             {
-                this.picDealCard3.Image = Properties.Resources._4S;
+
+                this.picDealCard2.Image = Properties.Resources._9;
+
             }
-            else if (DealNum3 == 5)
+            else if (dealNum2 == 5)
             {
-                this.picDealCard3.Image = Properties.Resources._5S;
+
+                this.picDealCard2.Image = Properties.Resources._13;
+
             }
-            else if (DealNum3 == 6)
+            else if (dealNum2 == 6)
             {
-                this.picDealCard3.Image = Properties.Resources._6S;
+
+                this.picDealCard2.Image = Properties.Resources._16;
+
             }
-            else if (DealNum3 == 7)
+            else if (dealNum2 == 7)
             {
-                this.picDealCard3.Image = Properties.Resources._7S;
+
+                this.picDealCard2.Image = Properties.Resources._21;
+
             }
-            else if (DealNum3 == 8)
+            else if (dealNum2 == 8)
             {
-                this.picDealCard3.Image = Properties.Resources._8S;
+
+                this.picDealCard2.Image = Properties.Resources._24;
+
             }
-            else if (DealNum3 == 9)
+            else if (dealNum2 == 9)
             {
-                this.picDealCard3.Image = Properties.Resources._9S;
+
+                this.picDealCard2.Image = Properties.Resources._29;
+
             }
-            else if (DealNum3 == 10)
+            else if (dealNum2 == 10)
             {
-                this.picDealCard3.Image = Properties.Resources._10S;
+
+                this.picDealCard2.Image = Properties.Resources._44;
+
             }
+
+            this.Refresh();
+
+            //dealer card 3
+            if (dealNum3 == 10)
+            {
+
+
+                this.picDealCard3.Image = Properties.Resources._46;
+
+            }
+            else if (dealNum3 == 2)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._0;
+
+            }
+            else if (dealNum3 == 3)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._5;
+
+            }
+            else if (dealNum3 == 4)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._8;
+
+            }
+            else if (dealNum3 == 5)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._14;
+
+            }
+            else if (dealNum3 == 6)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._17;
+
+            }
+            else if (dealNum3 == 7)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._20;
+
+            }
+            else if (dealNum3 == 8)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._26;
+
+            }
+            else if (dealNum3 == 9)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._28;
+
+            }
+            else if (dealNum3 == 10)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._45;
+
+            }
+
+            this.Refresh();
 
             //disable buttons
             btnHit.Enabled = false;
@@ -416,10 +562,9 @@ namespace Simplified21AllanL
         {
             //check to see who wins
             userTotal = userNum1 + userNum2;
-            DealTotal = DealNum1 + DealNum2 + DealNum3;
+            dealTotal = dealNum1 + dealNum2 + dealNum3;
 
-            //Check to see who won or lost
-            if (userTotal == DealTotal)
+            if (userTotal == dealTotal)
             {
                 this.lblWinner.Text = "Draw";
             }
@@ -428,15 +573,15 @@ namespace Simplified21AllanL
                 this.lblWinner.Text = "Blackjack! You Win";
                 winCounter++;
             }
-            else if (DealTotal == 21)
+            else if (dealTotal == 21)
             {
-                this.lblWinner.Text = "Blackjack! Dealer Wins";
+                this.lblWinner.Text = "Blackjack! dealer Wins";
             }
             else if (userTotal > 21)
             {
                 this.lblWinner.Text = "Dealer Wins";
             }
-            else if (DealTotal > 21)
+            else if (dealTotal > 21)
             {
                 if (userTotal < 21)
                 {
@@ -448,156 +593,563 @@ namespace Simplified21AllanL
                     this.lblWinner.Text = "Dealer Wins";
                 }
             }
-            else if (userTotal > DealTotal)
+            else if (userTotal > dealTotal)
             {
                 this.lblWinner.Text = "You Win";
                 winCounter++;
             }
-            else if (userTotal < DealTotal)
+            else if (userTotal < dealTotal)
             {
                 this.lblWinner.Text = "Dealer Wins";
             }
 
             //show the totals
             lblUserTotal.Text = Convert.ToString(userTotal);
-            lblDealTotal.Text = Convert.ToString(DealTotal);
+            lblDealTotal.Text = Convert.ToString(dealTotal);
 
-            //comp card pics 1
-            if (DealNum1 == 1)
+            //dealer card 1 pics
+            if (dealNum1 == 2)
             {
-                this.picDealCard1.Image = Properties.Resources.AS;
-            }
-            else if (DealNum1 == 2)
-            {
-                this.picDealCard1.Image = Properties.Resources._2S;
-            }
-            else if (DealNum1 == 3)
-            {
-                this.picDealCard1.Image = Properties.Resources._3S;
-            }
-            else if (DealNum1 == 4)
-            {
-                this.picDealCard1.Image = Properties.Resources._4S;
-            }
-            else if (DealNum1 == 5)
-            {
-                this.picDealCard1.Image = Properties.Resources._5S;
-            }
-            else if (DealNum1 == 6)
-            {
-                this.picDealCard1.Image = Properties.Resources._6S;
-            }
-            else if (DealNum1 == 7)
-            {
-                this.picDealCard1.Image = Properties.Resources._7S;
-            }
-            else if (DealNum1 == 8)
-            {
-                this.picDealCard1.Image = Properties.Resources._8S;
-            }
-            else if (DealNum1 == 9)
-            {
-                this.picDealCard1.Image = Properties.Resources._9S;
-            }
-            else if (DealNum1 == 10)
-            {
-                this.picDealCard1.Image = Properties.Resources._10S;
-            }
 
-            //comp card pics 2
-            if (compNum2 == 1)
-            {
-                this.picDealCard2.Image = Properties.Resources.AS;
+                this.picDealCard1.Image = Properties.Resources._1;
+
             }
-            else if (compNum2 == 2)
+            else if (dealNum1 == 4)
             {
-                this.picDealCard2.Image = Properties.Resources._2S;
+
+                this.picDealCard1.Image = Properties.Resources._8;
+
             }
-            else if (compNum2 == 3)
+            else if (dealNum1 == 3)
             {
-                this.picComp2.Image = Properties.Resources._3S;
+
+                this.picDealCard1.Image = Properties.Resources._6;
+
             }
-            else if (compNum2 == 4)
+            else if (dealNum1 == 4)
             {
-                this.picComp2.Image = Properties.Resources._4S;
+
+                this.picDealCard1.Image = Properties.Resources._11;
+
             }
-            else if (compNum2 == 5)
+            else if (dealNum1 == 5)
+
             {
-                this.picComp2.Image = Properties.Resources._5S;
+
+                this.picDealCard1.Image = Properties.Resources._15;
+
             }
-            else if (compNum2 == 6)
+            else if (dealNum1 == 6)
+
             {
-                this.picComp2.Image = Properties.Resources._6S;
+
+                this.picDealCard1.Image = Properties.Resources._18;
+
             }
-            else if (compNum2 == 7)
+            else if (dealNum1 == 7)
+
             {
-                this.picComp2.Image = Properties.Resources._7S;
+
+                this.picDealCard1.Image = Properties.Resources._20;
+
             }
-            else if (compNum2 == 8)
+            else if (dealNum1 == 8)
+
             {
-                this.picComp2.Image = Properties.Resources._8S;
+
+                this.picDealCard1.Image = Properties.Resources._24;
+
             }
-            else if (compNum2 == 9)
+            else if (dealNum1 == 9)
+
             {
-                this.picComp2.Image = Properties.Resources._9S;
+
+                this.picDealCard1.Image = Properties.Resources._29;
+
             }
-            else if (compNum2 == 10)
+            else if (dealNum1 == 10)
             {
-                this.picComp2.Image = Properties.Resources._10S;
+
+                this.picDealCard1.Image = Properties.Resources._45;
+
             }
 
-            //comp card pics 3
-            if (compNum3 == 1)
+            this.Refresh();
+
+            //dealer card 2
+            if (dealNum2 == 3)
             {
-                this.picComp3.Image = Properties.Resources.AS;
+
+                this.picDealCard2.Image = Properties.Resources._6;
+
             }
-            else if (compNum3 == 2)
+            else if (dealNum2 == 2)
             {
-                this.picComp3.Image = Properties.Resources._2S;
+
+                this.picDealCard2.Image = Properties.Resources._1;
+
             }
-            else if (compNum3 == 3)
+            else if (dealNum2 == 3)
             {
-                this.picComp3.Image = Properties.Resources._3S;
+
+                this.picDealCard2.Image = Properties.Resources._7;
+
             }
-            else if (compNum3 == 4)
+            else if (dealNum2 == 4)
             {
-                this.picComp3.Image = Properties.Resources._4S;
+
+                this.picDealCard2.Image = Properties.Resources._9;
+
             }
-            else if (compNum3 == 5)
+            else if (dealNum2 == 5)
             {
-                this.picComp3.Image = Properties.Resources._5S;
+
+                this.picDealCard2.Image = Properties.Resources._12;
+
             }
-            else if (compNum3 == 6)
+            else if (dealNum2 == 6)
             {
-                this.picComp3.Image = Properties.Resources._6S;
+
+                this.picDealCard2.Image = Properties.Resources._17;
+
             }
-            else if (compNum3 == 7)
+            else if (dealNum2 == 7)
             {
-                this.picComp3.Image = Properties.Resources._7S;
+
+                this.picDealCard2.Image = Properties.Resources._23;
+
             }
-            else if (compNum3 == 8)
+            else if (dealNum2 == 8)
             {
-                this.picComp3.Image = Properties.Resources._8S;
+
+                this.picDealCard2.Image = Properties.Resources._24;
+
             }
-            else if (compNum3 == 9)
+            else if (dealNum2 == 9)
             {
-                this.picComp3.Image = Properties.Resources._9S;
+
+                this.picDealCard2.Image = Properties.Resources._28;
+
             }
-            else if (compNum3 == 10)
+            else if (dealNum2 == 10)
             {
-                this.picComp3.Image = Properties.Resources._10S;
+
+                this.picDealCard2.Image = Properties.Resources._44;
+
             }
+
+            this.Refresh();
+
+            //Dealer card 3
+            if (dealNum3 == 2)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._1;
+
+            }
+            else if (dealNum3 == 2)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._3;
+
+            }
+            else if (dealNum3 == 3)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._5;
+
+            }
+            else if (dealNum3 == 4)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._9;
+
+            }
+            else if (dealNum3 == 5)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._15;
+
+            }
+            else if (dealNum3 == 6)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._19;
+
+            }
+            else if (dealNum3 == 7)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._22;
+
+            }
+            else if (dealNum3 == 8)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._27;
+
+            }
+            else if (dealNum3 == 9)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._29;
+
+            }
+            else if (dealNum3 == 10)
+            {
+
+                this.picDealCard3.Image = Properties.Resources._45;
+
+            }
+
+            this.Refresh();
 
             //disable buttons
             btnHit.Enabled = false;
             btnStay.Enabled = false;
 
             //Add to the wins
-            lblWins.Text = Convert.ToString(winCounter);
+            lblNumOfWins.Text = Convert.ToString(winCounter);
 
             //enable play again
             btnPlayAgain.Enabled = true;
 
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+            //hiding picture boxes
+            picUserCard3.Hide();
+
+            //Generate random numbers
+            userNum1 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            userNum2 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum1 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum2 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum3 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+
+            //user images 1
+            if (userNum1 == 6)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._18;
+
+            }
+            else if (userNum1 == 2)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._1;
+
+            }
+            else if (userNum1 == 3)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._7;
+
+            }
+            else if (userNum1 == 4)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._11;
+
+            }
+            else if (userNum1 == 5)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._12;
+
+            }
+            else if (userNum1 == 6)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._18;
+
+            }
+            else if (userNum1 == 7)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._23;
+
+            }
+            else if (userNum1 == 8)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._26;
+
+            }
+            else if (userNum1 == 9)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._29;
+
+            }
+            else if (userNum1 == 10)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._47;
+
+            }
+
+            this.Refresh();
+
+            //user images 2
+            if (userNum2 == 8)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._24;
+
+            }
+            else if (userNum2 == 2)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._2;
+
+            }
+            else if (userNum2 == 3)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._4;
+
+            }
+            else if (userNum2 == 4)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._10;
+
+            }
+            else if (userNum2 == 5)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._12;
+
+            }
+            else if (userNum2 == 6)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._18;
+
+            }
+            else if (userNum2 == 7)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._20;
+
+            }
+            else if (userNum2 == 8)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._25;
+
+            }
+            else if (userNum2 == 9)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._31;
+
+            }
+            else if (userNum2 == 10)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._46;
+
+            }
+
+            this.Refresh();
+
+            //show the total
+            lblUserTotal.Text = Convert.ToString(userNum1 + userNum2);
+            //hide dealTotal
+            lblDealTotal.Text = " ";
+
+            //show the Back of the cards
+            this.picDealCard1.Image = Properties.Resources.CardBack;
+            this.picDealCard2.Image = Properties.Resources.CardBack;
+            this.picDealCard3.Image = Properties.Resources.CardBack;
+
+            //disable play again
+            btnPlayAgain.Enabled = false;
+
+            //enable hit and stay btns
+            btnHit.Enabled = true;
+            btnStay.Enabled = true;
+
+            //make ldlWinner display nothing
+            lblWinner.Text = " ";
+        }
+
+        private void mniExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mniNewGame_Click(object sender, EventArgs e)
+        {
+            userNum1 = 0;
+            userNum2 = 0;
+            userNum3 = 0;
+            dealNum1 = 0;
+            dealNum2 = 0;
+            dealNum3 = 0;
+           
+            //hiding picture boxes
+            picUserCard3.Hide();
+
+            //show the Back of the cards
+            this.picDealCard1.Image = Properties.Resources.CardBack;
+            this.picDealCard2.Image = Properties.Resources.CardBack;
+            this.picDealCard3.Image = Properties.Resources.CardBack;
+
+            lblWinner.Text = " ";
+
+            //enable hit and stay buttons
+            btnHit.Enabled = true;
+            btnStay.Enabled = true;
+
+            //hide dealTotal
+            lblDealTotal.Text = " ???";
+
+            //Generate random numbers
+            userNum1 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            userNum2 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum1 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum2 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+            dealNum3 = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
+
+            //user images 1
+            if (userNum1 == 6)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._18;
+
+            }
+            else if (userNum1 == 2)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._1;
+
+            }
+            else if (userNum1 == 3)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._7;
+
+            }
+            else if (userNum1 == 4)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._11;
+
+            }
+            else if (userNum1 == 5)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._12;
+
+            }
+            else if (userNum1 == 6)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._18;
+
+            }
+            else if (userNum1 == 7)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._23;
+
+            }
+            else if (userNum1 == 8)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._26;
+
+            }
+            else if (userNum1 == 9)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._29;
+
+            }
+            else if (userNum1 == 10)
+            {
+
+                this.picUserCard1.Image = Properties.Resources._47;
+
+            }
+
+            this.Refresh();
+
+            //user images 2
+            if (userNum2 == 8)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._24;
+
+            }
+            else if (userNum2 == 2)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._2;
+
+            }
+            else if (userNum2 == 3)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._4;
+
+            }
+            else if (userNum2 == 4)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._10;
+
+            }
+            else if (userNum2 == 5)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._12;
+
+            }
+            else if (userNum2 == 6)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._18;
+
+            }
+            else if (userNum2 == 7)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._20;
+
+            }
+            else if (userNum2 == 8)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._25;
+
+            }
+            else if (userNum2 == 9)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._31;
+
+            }
+            else if (userNum2 == 10)
+            {
+
+                this.picUserCard2.Image = Properties.Resources._46;
+
+            }
+
+            this.Refresh();
+
+            //show the total
+            lblUserTotal.Text = Convert.ToString(userNum1 + userNum2);
+
+            lblNumOfWins.Text =" 0";
+
+            //Reset Win Counter
+            winCounter = 0;
         }
     }
 }
